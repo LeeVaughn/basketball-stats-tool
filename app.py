@@ -1,4 +1,5 @@
-# import player data
+# import data
+from constants import TEAMS, PLAYERS
 
 # clean data
     # create separate Lists for TEAMS and PlAYERS?
@@ -23,5 +24,5 @@
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
 
-if __name__ == "__main__":
-    # run initial function
+# if __name__ == "__main__":
+#     # run initial function
