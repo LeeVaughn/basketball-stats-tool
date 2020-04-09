@@ -3,6 +3,12 @@ from constants import TEAMS, PLAYERS
 
 # clean data
     # create separate Lists for TEAMS and PlAYERS?
+def create_teams(teams):
+    return teams
+
+
+def create_players(players):
+    return players
     # convert height string to int
     # convert experienced string to boolean
     # split guardian field into a List of strings
@@ -20,9 +26,16 @@ from constants import TEAMS, PLAYERS
     # guardians of all players seperated by commas
 
 # create a menu for user interaction
+def draft(teams_list, players_list):
+    teams = create_teams(teams_list)
+    players = create_players(players_list)
+
+    print(teams)
+    print(players)
     # user should be able to display a given teams stats
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
 
-# if __name__ == "__main__":
-#     # run initial function
+if __name__ == "__main__":
+    # run initial function
+    draft(TEAMS, PLAYERS)
