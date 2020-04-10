@@ -11,8 +11,12 @@ def create_players(players):
     for player in players:
         # converts height string to int
         player["height"] = int(player["height"][0:2])
+        # converts experience string to boolean
+        if player["experience"] == "YES":
+            player["experience"] = True
+        else:
+            player["experience"] = False
     return players
-    # convert experienced string to boolean
     # split guardian field into a List of strings
 
 # balance the number of players equally between teams
