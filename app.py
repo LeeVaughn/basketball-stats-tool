@@ -11,13 +11,18 @@ def create_players(players):
     for player in players:
         # converts height string to int
         player["height"] = int(player["height"][0:2])
+
         # converts experience string to boolean
         if player["experience"] == "YES":
             player["experience"] = True
         else:
             player["experience"] = False
+
+        # splits guardian field into a List of strings and uses list comprehension to remove whitespace
+        guardians_split = player["guardians"].split("and")
+        player["guardians"] = [guardian.strip(" ") for guardian in guardians_split]
+
     return players
-    # split guardian field into a List of strings
 
 # balance the number of players equally between teams
     # teams should have an equal number of experienced and inexperienced players
