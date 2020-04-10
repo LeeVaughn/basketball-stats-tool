@@ -8,8 +8,10 @@ def create_teams(teams):
 
 
 def create_players(players):
+    for player in players:
+        # converts height string to int
+        player["height"] = int(player["height"][0:2])
     return players
-    # convert height string to int
     # convert experienced string to boolean
     # split guardian field into a List of strings
 
