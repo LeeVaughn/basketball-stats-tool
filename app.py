@@ -27,17 +27,32 @@ def create_players(players):
 
 # balance the number of players equally between teams
 def draft(teams_list, players_list):
-    panthers = {}
-    bandits = {}
-    warriors = {}
+    experienced = []
+    inexperienced = []
+    panthers = []
+    bandits = []
+    warriors = []
 
-    for num, player in enumerate(players_list, start = 1):
-        print("Player {}: {}".format(num, player))
-
-    # for player in players_list:
-    #     print(player)
     # teams should have an equal number of experienced and inexperienced players
         # might need to split experienced and inexperienced players into separate Lists for this?
+    for player in players_list:
+        if player["experience"] == True:
+            experienced.append(player)
+        else:
+            inexperienced.append(player)
+
+    for num, player in enumerate(experienced, start = 1):
+        if num % 3 == 0:
+            panthers.append(player)
+        elif num % 2 == 0:
+            bandits.append(player)
+        else:
+            warriors.append(player)
+
+    # print(experienced)
+    # print(len(experienced))
+    # print(len(inexperienced))
+    return panthers, bandits, warriors
 
 
 # display stats
@@ -47,6 +62,7 @@ def draft(teams_list, players_list):
     # average height of the team
     # player names seperated by commas
     # guardians of all players seperated by commas
+
 
 # create a menu for user interaction
 def menu(teams_list, players_list):
