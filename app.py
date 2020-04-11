@@ -24,9 +24,21 @@ def create_players(players):
 
     return players
 
+
 # balance the number of players equally between teams
+def draft(teams_list, players_list):
+    panthers = {}
+    bandits = {}
+    warriors = {}
+
+    for num, player in enumerate(players_list, start = 1):
+        print("Player {}: {}".format(num, player))
+
+    # for player in players_list:
+    #     print(player)
     # teams should have an equal number of experienced and inexperienced players
         # might need to split experienced and inexperienced players into separate Lists for this?
+
 
 # display stats
     # team name
@@ -37,16 +49,18 @@ def create_players(players):
     # guardians of all players seperated by commas
 
 # create a menu for user interaction
-def draft(teams_list, players_list):
+def menu(teams_list, players_list):
     teams = create_teams(teams_list)
     players = create_players(players_list)
+    rosters = draft(teams_list, players_list)
 
-    print(teams)
-    print(players)
+    # print(teams)
+    # print(players)
+    print(rosters)
     # user should be able to display a given teams stats
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
 
 if __name__ == "__main__":
     # run initial function
-    draft(TEAMS, PLAYERS)
+    menu(TEAMS, PLAYERS)
