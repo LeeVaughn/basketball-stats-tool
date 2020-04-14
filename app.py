@@ -70,16 +70,18 @@ def draft(teams_list, players_list):
     return panthers, bandits, warriors
 
 
-# display stats
+# displays team stats
 def display_stats(team, players):
+    # variables to track player stats
     exp_players = 0
     inexp_players = 0
     height = 0
     names_list = []
     guardians_list = []
 
-    # calculate stats
+    # iterates over players list to create stats
     for player in players:
+        # separates experienced and inexperienced players in to separate lists
         if player["experience"] == True:
             exp_players += 1
         elif player["experience"] == False:
@@ -94,18 +96,12 @@ def display_stats(team, players):
     # uses nested list comprehension to create a string of guardian names
     guardians = ", ".join([str(guardian) for sublist in guardians_list for guardian in sublist])
 
-    # team name
-    print("Displaying stats for the {}.".format(team))
-    # number of players on team
+    print("\nDisplaying stats for the {}.\n".format(team))
     print("There are {} players on the team,".format(len(players)))
-    # number of experience/inexperienced players (maybe combine these two steps?)
     print("{} experienced players and {} inexperienced.".format(exp_players, inexp_players))
-    # average height of the team
-    print("The average player height is {} inches.".format(height / len(players)))
-    # player names seperated by commas
-    print("Players:", names)
-    # guardians of all players seperated by commas
-    print("Guardians:", guardians)
+    print("The average player height is {} inches.\n".format(height / len(players)))
+    print("Players:", names, "\n")
+    print("Guardians:", guardians, "\n")
 
 
 # create a menu for user interaction
