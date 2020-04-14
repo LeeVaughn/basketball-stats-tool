@@ -42,7 +42,17 @@ def draft(teams_list, players_list):
         else:
             inexperienced.append(player)
 
+    # divides experienced players equally between teams
     for num, player in enumerate(experienced, start = 1):
+        if num % 3 == 0:
+            panthers.append(player)
+        elif num % 2 == 0:
+            bandits.append(player)
+        else:
+            warriors.append(player)
+
+    # divides inexperienced players equally between teams
+    for num, player in enumerate(inexperienced, start = 1):
         if num % 3 == 0:
             panthers.append(player)
         elif num % 2 == 0:
