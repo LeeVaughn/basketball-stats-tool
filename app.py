@@ -27,14 +27,15 @@ def create_players(players):
 
 # balance the number of players equally between teams
 def draft(teams_list, players_list):
+    # creates global variables for teams so they can be accessed in the menu function
+    global panthers, bandits, warriors
     experienced = []
     inexperienced = []
     panthers = []
     bandits = []
     warriors = []
 
-    # teams should have an equal number of experienced and inexperienced players
-        # might need to split experienced and inexperienced players into separate Lists for this?
+    # splits players into separate lists based on experience property
     for player in players_list:
         if player["experience"] == True:
             experienced.append(player)
@@ -72,7 +73,7 @@ def menu(teams_list, players_list):
 
     # print(teams)
     # print(players)
-    print(rosters)
+    # print(rosters)
     # user should be able to display a given teams stats
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
