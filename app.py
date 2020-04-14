@@ -91,7 +91,8 @@ def display_stats(team, players):
 
     # uses list comprehension to create a string of player names
     names = ", ".join([str(name) for name in names_list])
-    guardians = ", ".join([str(guardian) for guardian in guardians_list])
+    # uses nested list comprehension to create a string of guardian names
+    guardians = ", ".join([str(guardian) for sublist in guardians_list for guardian in sublist])
 
     # team name
     print("Displaying stats for the {}.".format(team))
@@ -104,7 +105,7 @@ def display_stats(team, players):
     # player names seperated by commas
     print("Players:", names)
     # guardians of all players seperated by commas
-    print(guardians)
+    print("Guardians:", guardians)
 
 
 # create a menu for user interaction
