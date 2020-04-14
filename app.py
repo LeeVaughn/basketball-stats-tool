@@ -35,14 +35,14 @@ def draft(teams_list, players_list):
     bandits = []
     warriors = []
 
-    # splits players into separate lists based on experience property
+    # splits players into separate lists based on experience key
     for player in players_list:
         if player["experience"] == True:
             experienced.append(player)
         else:
             inexperienced.append(player)
 
-    # divides experienced players equally between teams
+    # iterates over list to divide experienced players equally between teams
     for num, player in enumerate(experienced, start = 1):
         if num % 3 == 0:
             panthers.append(player)
@@ -51,7 +51,7 @@ def draft(teams_list, players_list):
         else:
             warriors.append(player)
 
-    # divides inexperienced players equally between teams
+    # iterates over list divide inexperienced players equally between teams
     for num, player in enumerate(inexperienced, start = 1):
         if num % 3 == 0:
             panthers.append(player)
@@ -60,9 +60,6 @@ def draft(teams_list, players_list):
         else:
             warriors.append(player)
 
-    # print(experienced)
-    # print(len(experienced))
-    # print(len(inexperienced))
     return panthers, bandits, warriors
 
 
