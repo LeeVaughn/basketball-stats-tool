@@ -31,7 +31,13 @@ def draft(teams_list, players_list):
     global panthers, bandits, warriors
     experienced = []
     inexperienced = []
-    panthers = []
+    panthers = [{
+        "team": TEAMS[0],
+        "num_players": 0,
+        "num_exp": 0,
+        "num_inexp": 0,
+        "avg_height": 0
+    }]
     bandits = []
     warriors = []
 
@@ -64,8 +70,11 @@ def draft(teams_list, players_list):
 
 
 # display stats
+def display_stats(team, stats):
     # team name
+    print("Team Name: ", team)
     # number of players on team
+    print("There are {} players on the team".format(len(stats)))
     # number of experience/inexperienced players (maybe combine these two steps?)
     # average height of the team
     # player names seperated by commas
@@ -82,6 +91,7 @@ def menu(teams_list, players_list):
     # print(players)
     # print(rosters)
     # user should be able to display a given teams stats
+    display_stats(TEAMS[0], panthers)
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
 
