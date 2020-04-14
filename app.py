@@ -75,6 +75,8 @@ def display_stats(team, players):
     exp_players = 0
     inexp_players = 0
     height = 0
+    names_list = []
+    guardians_list = []
 
     # calculate stats
     for player in players:
@@ -84,6 +86,12 @@ def display_stats(team, players):
             inexp_players += 1
 
         height += player["height"]
+        names_list.append(player["name"])
+        guardians_list.append(player["guardians"])
+
+    # uses list comprehension to create a string of player names
+    names = ", ".join([str(name) for name in names_list])
+    guardians = ", ".join([str(guardian) for guardian in guardians_list])
 
     # team name
     print("Displaying stats for the {}.".format(team))
@@ -94,7 +102,9 @@ def display_stats(team, players):
     # average height of the team
     print("The average player height is {} inches.".format(height / len(players)))
     # player names seperated by commas
+    print("Players:", names)
     # guardians of all players seperated by commas
+    print(guardians)
 
 
 # create a menu for user interaction
