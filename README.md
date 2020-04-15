@@ -1,22 +1,25 @@
-# Basketball Team Stats Tool
-In this project you will be writing a program that reads from the "constants" data (`PLAYERS` and `TEAMS`) in `constants.py`. This data will need to be translated into a new collection of your choosing and the fields need to be changed to something that makes more sense for Python to do its comparisons.
+# Basketball Stats Tool
+This console based application takes a list of team and player data, cleans and formats the data for presentation. The user can then interact with the application to display statistics for the selected team
 
+## Motivation
+This is my take on the second project in Treehouse's Python Techdegree program.
 
-**NOTE**: Python has no concept of actual constants like some other languages out there. But it is a convention in Python to treat ALL CAPS variables as if they are in-fact constants.
+## Features
+* The user is prompted with instructions on how to select a team or quit the application
+* If the user enters a team name, statistics for that team are shown and then the user is reprompted to choose a team or quit the application.
+* If the users type "Quit" the application ends
+* User input works for upper or lower case input
+* Exceptions are raised and handled if the user enters something outside of the expected results
+* Player height property is converted from a string to an integer for presentation
+* Player experience is converted from a string to a boolean for presentation
+* Player guardian is converted from a string to a list for presentation
+* Team statistics include team name, number of players, number of experienced and inexperienced players, average player height, player names, and guardian names
 
+## Future Improvements
+* Streamline printing of stats in display_stats function
 
-**Steps to get started:**
+## Links
+* Repository: https://github.com/LeeVaughn/basketball-stats-tool
 
-1. Create a new empty script file called `app.py` or `application.py`
-
-2. Inside this new file, you will want a Dunder Main statement:
-   For a refresh on Dunder Main:
-   https://teamtreehouse.com/library/understanding-dunder-main-main
-
-3. Any print statements or function calls you will want to be inside Dunder Main or inside a main function call which is nested inside Dunder Main.
-   If you need a refresh, check out the supplied Project 1 files/workspace for an example.
-   
-
-
-If you get stuck, try to work through the problem. Sometimes it helps to try to write/draw out your steps on paper in the order your program should run in and solve each step 1 at a time. If you are still stuck be sure to reach out in the Python Techdegree #unit-02 Slack channel.
-
+## Author
+[Daniel Lee Vaughn](https://github.com/LeeVaughn)
