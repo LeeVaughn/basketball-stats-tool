@@ -84,7 +84,7 @@ def display_stats(team, players):
         height += player["height"]
         names_list.append(player["name"])
         guardians_list.append(player["guardians"])
-        # I wasn't completely sure I understood the Exceeds part of the Clean up dat section so I created this list
+        # I wasn't completely sure I understood the Exceeds part of the Clean up data section so I created this list
         player_guardians.append({"player": player["name"], "guardians": player["guardians"]})
 
     # uses list comprehension to create a string of player names
@@ -106,13 +106,22 @@ def menu(teams_list, players_list):
     teams = create_teams(teams_list)
     players = create_players(players_list)
     rosters = draft(teams_list, players_list)
+    # display_stats(TEAMS[0], panthers)
+    print("\nWelcome to the BasketBall Stats Tool!")
+    print("""
+        Enter "Panthers" to see stats for the Panthers.
+        Enter "Bandits" to see stats for the Bandits.
+        Enter "Warriors" to see stats for the Warriors.
+        Enter "Quit" to exit the program.
+    """)
 
-    # print(teams)
-    # print(players)
-    # print(rosters)
+    while True:
+        try:
+            response = input("> ")
+            print(response.lower())
+        except ValueError as err:
+            print("There has been an error", err)
     # user should be able to display a given teams stats
-    display_stats(TEAMS[0], panthers)
-    print(panthers)
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
 
