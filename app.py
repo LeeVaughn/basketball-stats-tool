@@ -31,13 +31,6 @@ def draft(teams_list, players_list):
     global panthers, bandits, warriors
     experienced = []
     inexperienced = []
-    # panthers = [{
-    #     "team": TEAMS[0],
-    #     "num_players": 0,
-    #     "num_exp": 0,
-    #     "num_inexp": 0,
-    #     "avg_height": 0
-    # }]
     panthers = []
     bandits = []
     warriors = []
@@ -78,6 +71,7 @@ def display_stats(team, players):
     height = 0
     names_list = []
     guardians_list = []
+    player_guardians = []
 
     # iterates over players list to create stats
     for player in players:
@@ -90,6 +84,8 @@ def display_stats(team, players):
         height += player["height"]
         names_list.append(player["name"])
         guardians_list.append(player["guardians"])
+        # I wasn't completely sure I understood the Exceeds part of the Clean up dat section so I created this list
+        player_guardians.append({"player": player["name"], "guardians": player["guardians"]})
 
     # uses list comprehension to create a string of player names
     names = ", ".join([str(name) for name in names_list])
@@ -102,6 +98,7 @@ def display_stats(team, players):
     print("The average player height is {} inches.\n".format(height / len(players)))
     print("Players:", names, "\n")
     print("Guardians:", guardians, "\n")
+    print(player_guardians)
 
 
 # create a menu for user interaction
