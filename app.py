@@ -98,7 +98,6 @@ def display_stats(team, players):
     print("The average player height is {} inches.\n".format(height / len(players)))
     print("Players:", names, "\n")
     print("Guardians:", guardians, "\n")
-    print(player_guardians)
 
 
 # create a menu for user interaction
@@ -108,19 +107,36 @@ def menu(teams_list, players_list):
     rosters = draft(teams_list, players_list)
     # display_stats(TEAMS[0], panthers)
     print("\nWelcome to the BasketBall Stats Tool!")
-    print("""
-        Enter "Panthers" to see stats for the Panthers.
-        Enter "Bandits" to see stats for the Bandits.
-        Enter "Warriors" to see stats for the Warriors.
-        Enter "Quit" to exit the program.
-    """)
+    
 
     while True:
+        print("""
+            Enter "Panthers" to see stats for the Panthers.
+            Enter "Bandits" to see stats for the Bandits.
+            Enter "Warriors" to see stats for the Warriors.
+            Enter "Quit" to exit the program.
+        """)
+
         try:
             response = input("> ")
-            print(response.lower())
+
+            if response.lower() == "panthers":
+                display_stats(TEAMS[0], panthers)
+                continue
+            elif response.lower() == "bandits":
+                display_stats(TEAMS[0], bandits)
+                continue
+            elif response.lower() == "warriors":
+                display_stats(TEAMS[0], warriors)
+                continue
+            elif response.lower() == "quit":
+                print("Have a great day!")
+                break
+            else:
+                raise ValueError()
         except ValueError as err:
-            print("There has been an error", err)
+            print("Invalid input. Please try again.")
+
     # user should be able to display a given teams stats
     # user should be able to quit
     # user should be reprompted with the main menu until they quit the program
