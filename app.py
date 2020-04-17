@@ -1,5 +1,6 @@
 # import data
 from constants import TEAMS, PLAYERS
+import copy
 
 
 def create_players(players):
@@ -114,7 +115,7 @@ def display_stats(team, players):
     print("Guardians:", guardians, "\n")
 
 
-def menu(teams_list, players_list):
+def menu(TEAMS, players_list):
     """
     Prompt the user for input and display stats for the selected team.
 
@@ -159,4 +160,4 @@ def menu(teams_list, players_list):
 
 if __name__ == "__main__":
     # run initial function
-    menu(TEAMS, PLAYERS)
+    menu(TEAMS, copy.deepcopy(PLAYERS))
