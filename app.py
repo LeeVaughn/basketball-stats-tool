@@ -1,10 +1,6 @@
 # import data
 from constants import TEAMS, PLAYERS
 
-def create_teams(teams):
-    """Return a List of teams."""
-    return teams
-
 
 def create_players(players):
     """
