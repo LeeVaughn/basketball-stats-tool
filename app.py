@@ -30,7 +30,7 @@ def create_players(players):
 
 
 # balance the number of players equally between teams
-def draft(teams_list, players_list):
+def draft(players_list):
     """
     Balance the number of players equally between teams and then return teams.
 
@@ -127,9 +127,9 @@ def menu(teams_list, players_list):
     Raise and handle exception if they enter something outside of the expected responseds
     Reprompt user to select another team until they chose to quit the program
     """
-    teams = create_teams(teams_list)
-    players = create_players(players_list)
-    rosters = draft(teams_list, players_list)
+    create_players(players_list)
+    draft(players_list)
+
     print("\nWelcome to the BasketBall Stats Tool!")
     
     while True:
