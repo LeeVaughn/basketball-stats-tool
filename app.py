@@ -147,10 +147,10 @@ def menu(teams_list, players_list):
                 display_stats(TEAMS[0], panthers)
                 continue
             elif response.lower() == "bandits":
-                display_stats(TEAMS[0], bandits)
+                display_stats(TEAMS[1], bandits)
                 continue
             elif response.lower() == "warriors":
-                display_stats(TEAMS[0], warriors)
+                display_stats(TEAMS[2], warriors)
                 continue
             elif response.lower() == "quit":
                 print("Have a great day!")
