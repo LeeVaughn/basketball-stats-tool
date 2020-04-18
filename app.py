@@ -90,7 +90,6 @@ def display_stats(team, players):
     height = 0
     names_list = []
     guardians_list = []
-    player_guardians = []
 
     for player in players:
         if player["experience"] == True:
@@ -101,8 +100,6 @@ def display_stats(team, players):
         height += player["height"]
         names_list.append(player["name"])
         guardians_list.append(player["guardians"])
-        # I wasn't completely sure I understood the Exceeds part of the Clean up data section so I created this list
-        player_guardians.append({"player": player["name"], "guardians": player["guardians"]})
 
     names = ", ".join([str(name) for name in names_list])
     guardians = ", ".join([str(guardian) for sublist in guardians_list for guardian in sublist])
