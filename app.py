@@ -92,9 +92,9 @@ def display_stats(team, players):
     guardians_list = []
 
     for player in players:
-        if player["experience"] == True:
+        if player["experience"] is True:
             exp_players += 1
-        elif player["experience"] == False:
+        elif player["experience"] is False:
             inexp_players += 1
 
         height += player["height"]
